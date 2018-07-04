@@ -16,96 +16,151 @@ public class WeatherEntry {
     @PrimaryKey(autoGenerate = true)
     private int id;
 
-    private int weatherIconId;
     private Date date;
-    private double min;
-    private double max;
-    private double humidity;
+    private double temp;
+    private double tempMin;
+    private double tempMax;
     private double pressure;
-    private double wind;
-    private double degrees;
+    private double seaLevel;
+    private double groundLevel;
+    private double humidity;
+
+    private int weatherIconId;
+    private String weatherDescription;
+
+    private double windSpeed;
+    private double windDirection;
+
+    private String locationName;
+    private double population;
 
     /**
-     * Constructor used by OpenWeatherJsonParser.
+     * Constructor used by OpenWeatherJsonParser
      *
-     * @param weatherIconId Image id for weather
-     * @param date Date of weather
-     * @param min Min temperature
-     * @param max Max temperature
-     * @param humidity Humidity for the day
-     * @param pressure Barometric pressure
-     * @param wind Wind speed
-     * @param degrees Wind direction
+     * @param date
+     * @param temp
+     * @param tempMin
+     * @param tempMax
+     * @param pressure
+     * @param seaLevel
+     * @param groundLevel
+     * @param humidity
+     * @param weatherIconId
+     * @param weatherDescription
+     * @param windSpeed
+     * @param windDirection
      */
     @Ignore
-    public WeatherEntry(int weatherIconId, Date date, double min, double max, double humidity, double pressure, double wind, double degrees) {
-        this.weatherIconId = weatherIconId;
+    public WeatherEntry(Date date, double temp, double tempMin, double tempMax, double pressure, double seaLevel, double groundLevel, double humidity, int weatherIconId, String weatherDescription, double windSpeed, double windDirection, String locationName, double population) {
+        this.id = id;
         this.date = date;
-        this.min = min;
-        this.max = max;
-        this.humidity = humidity;
+        this.temp = temp;
+        this.tempMin = tempMin;
+        this.tempMax = tempMax;
         this.pressure = pressure;
-        this.wind = wind;
-        this.degrees = degrees;
+        this.seaLevel = seaLevel;
+        this.groundLevel = groundLevel;
+        this.humidity = humidity;
+        this.weatherIconId = weatherIconId;
+        this.weatherDescription = weatherDescription;
+        this.windSpeed = windSpeed;
+        this.windDirection = windDirection;
+        this.locationName = locationName;
+        this.population = population;
     }
 
     /**
      * Constructor used by ROOM for object mapping.
-     * 
-     * @param weatherIconId Image id for weather
-     * @param date Date of weather
-     * @param min Min temperature
-     * @param max Max temperature
-     * @param humidity Humidity for the day
-     * @param pressure Barometric pressure
-     * @param wind Wind speed
-     * @param degrees Wind direction
+     *
+     * @param id
+     * @param date
+     * @param temp
+     * @param tempMin
+     * @param tempMax
+     * @param pressure
+     * @param seaLevel
+     * @param groundLevel
+     * @param humidity
+     * @param weatherIconId
+     * @param weatherDescription
+     * @param windSpeed
+     * @param windDirection
      */
-    public WeatherEntry(int id, int weatherIconId, Date date, double min, double max, double humidity, double pressure, double wind, double degrees) {
+    public WeatherEntry(int id, Date date, double temp, double tempMin, double tempMax, double pressure, double seaLevel, double groundLevel, double humidity, int weatherIconId, String weatherDescription, double windSpeed, double windDirection, String locationName, double population) {
         this.id = id;
-        this.weatherIconId = weatherIconId;
         this.date = date;
-        this.min = min;
-        this.max = max;
-        this.humidity = humidity;
+        this.temp = temp;
+        this.tempMin = tempMin;
+        this.tempMax = tempMax;
         this.pressure = pressure;
-        this.wind = wind;
-        this.degrees = degrees;
+        this.seaLevel = seaLevel;
+        this.groundLevel = groundLevel;
+        this.humidity = humidity;
+        this.weatherIconId = weatherIconId;
+        this.weatherDescription = weatherDescription;
+        this.windSpeed = windSpeed;
+        this.windDirection = windDirection;
+        this.locationName = locationName;
+        this.population = population;
     }
 
     public int getId() {
         return id;
     }
 
-    public int getWeatherIconId() {
-        return weatherIconId;
-    }
-
     public Date getDate() {
         return date;
     }
 
-    public double getMin() {
-        return min;
+    public double getTemp() {
+        return temp;
     }
 
-    public double getMax() {
-        return max;
+    public double getTempMin() {
+        return tempMin;
     }
 
-    public double getHumidity() {
-        return humidity;
+    public double getTempMax() {
+        return tempMax;
     }
 
     public double getPressure() {
         return pressure;
     }
 
-    public double getWind() {
-        return wind;
+    public double getSeaLevel() {
+        return seaLevel;
     }
 
-    public double getDegrees() {
-        return degrees;
+    public double getGroundLevel() {
+        return groundLevel;
+    }
+
+    public double getHumidity() {
+        return humidity;
+    }
+
+    public int getWeatherIconId() {
+        return weatherIconId;
+    }
+
+    public String getWeatherDescription() {
+        return weatherDescription;
+    }
+
+    public double getWindSpeed() {
+        return windSpeed;
+    }
+
+    public double getWindDirection() {
+        return windDirection;
+    }
+
+    public String getLocationName() {
+        return locationName;
+    }
+
+    public double getPopulation() {
+        return population;
     }
 }
