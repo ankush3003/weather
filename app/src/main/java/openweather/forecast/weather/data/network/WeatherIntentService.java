@@ -4,7 +4,7 @@ import android.app.IntentService;
 import android.content.Intent;
 import android.util.Log;
 
-import weather.tutorial.com.weather.utils.InjectorUtils;
+import openweather.forecast.weather.utils.InjectorUtils;
 
 /**
  * An {@link IntentService} subclass for immediately scheduling a sync with the server off of the

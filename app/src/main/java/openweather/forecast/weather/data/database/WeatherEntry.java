@@ -32,7 +32,7 @@ public class WeatherEntry {
     private double windDirection;
 
     private String locationName;
-    private double population;
+    //private double population;
 
     /**
      * Constructor used by OpenWeatherJsonParser
@@ -51,7 +51,7 @@ public class WeatherEntry {
      * @param windDirection
      */
     @Ignore
-    public WeatherEntry(Date date, double temp, double tempMin, double tempMax, double pressure, double seaLevel, double groundLevel, double humidity, int weatherIconId, String weatherDescription, double windSpeed, double windDirection, String locationName, double population) {
+    public WeatherEntry(Date date, double temp, double tempMin, double tempMax, double pressure, double seaLevel, double groundLevel, double humidity, int weatherIconId, String weatherDescription, double windSpeed, double windDirection, String locationName/*, double population*/) {
         this.id = id;
         this.date = date;
         this.temp = temp;
@@ -66,7 +66,7 @@ public class WeatherEntry {
         this.windSpeed = windSpeed;
         this.windDirection = windDirection;
         this.locationName = locationName;
-        this.population = population;
+        //this.population = population;
     }
 
     /**
@@ -86,7 +86,7 @@ public class WeatherEntry {
      * @param windSpeed
      * @param windDirection
      */
-    public WeatherEntry(int id, Date date, double temp, double tempMin, double tempMax, double pressure, double seaLevel, double groundLevel, double humidity, int weatherIconId, String weatherDescription, double windSpeed, double windDirection, String locationName, double population) {
+    public WeatherEntry(int id, Date date, double temp, double tempMin, double tempMax, double pressure, double seaLevel, double groundLevel, double humidity, int weatherIconId, String weatherDescription, double windSpeed, double windDirection, String locationName/*, double population*/) {
         this.id = id;
         this.date = date;
         this.temp = temp;
@@ -101,7 +101,7 @@ public class WeatherEntry {
         this.windSpeed = windSpeed;
         this.windDirection = windDirection;
         this.locationName = locationName;
-        this.population = population;
+        //this.population = population;
     }
 
     public int getId() {
@@ -160,7 +160,7 @@ public class WeatherEntry {
         return locationName;
     }
 
-    public double getPopulation() {
+    /*public double getPopulation() {
         return population;
-    }
+    }*/
 }

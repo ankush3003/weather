@@ -75,7 +75,7 @@ final class OpenWeatherJsonParser {
 
         // Extract values from 'city' object
         String cityCountryName = "";
-        double cityPopulation = 0;
+        double cityPopulation = 0.0;
         JSONObject cityObject = forecastJson.optJSONObject(OWM_MESSAGE_CITY);
         if(cityObject != null) {
             cityCountryName = cityObject.optString(OWM_MESSAGE_CITY_NAME) + ", " +
@@ -146,7 +146,7 @@ final class OpenWeatherJsonParser {
         return new WeatherEntry(new Date(dateTimeMillis), current_temp, min_temp, max_temp, pressure, sea_level, ground_level, humidity,
                 weatherId, description,
                 windSpeed, windDirection,
-                cityName, cityPopulation);
+                cityName);//, cityPopulation);
     }
 
     /**

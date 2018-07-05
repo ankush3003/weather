@@ -18,13 +18,15 @@ final class NetworkUtils {
     private static final String TAG = NetworkUtils.class.getSimpleName();
 
     private static final String FORECAST_BASE_URL =
-            "https://api.openweathermap.org/data/2.5/forecast";//?q=London,us&appid=97795dadae2bc5aa2a809abf5646d20e";
-
+            //"https://api.openweathermap.org/data/2.5/forecast";//?q=London,us&appid=97795dadae2bc5aa2a809abf5646d20e";
+            "https://samples.openweathermap.org/data/2.5/forecast";//?q=London,us&appid=97795dadae2bc5aa2a809abf5646d20e";
     private static final String units = "metric";
 
     // Query Params
     private static final String QUERY_PARAM = "q";
     private static final String UNITS_PARAM = "units";
+    private static final String QUERY_APPID = "appid";
+    private static final String VAL_APPID = "97795dadae2bc5aa2a809abf5646d20e";
 
     /**
      * Retrieves the proper URL for the weather data.
@@ -32,7 +34,7 @@ final class NetworkUtils {
      * @return URL to query weather service
      */
     static URL getUrl() {
-        String locationQuery = "Mountain View, CA";
+        String locationQuery = "London,us";
         return buildUrlWithLocationQuery(locationQuery);
     }
 
@@ -45,7 +47,8 @@ final class NetworkUtils {
     private static URL buildUrlWithLocationQuery(String locationQuery) {
         Uri weatherQueryUri = Uri.parse(FORECAST_BASE_URL).buildUpon()
                 .appendQueryParameter(QUERY_PARAM, locationQuery)
-                .appendQueryParameter(UNITS_PARAM, units)
+                //.appendQueryParameter(UNITS_PARAM, units)
+                .appendQueryParameter(QUERY_APPID, VAL_APPID)
                 .build();
         try {
             URL weatherQueryUrl = new URL(weatherQueryUri.toString());
